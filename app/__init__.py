@@ -19,6 +19,6 @@ def index():
 
 @app.route('/getCoverageBySprint', methods=['POST'])
 def get_q_test_coverage_per_sprint():
-    sprints = request.get_json()['sprins']
+    sprints = request.get_json()['sprints']
     results = get_q_test_coverage_per_member(sprints)
     return results
