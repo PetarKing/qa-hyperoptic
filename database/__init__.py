@@ -24,7 +24,7 @@ def connect_to_jira():
         # conn = psycopg2.connect(**params)
         conn = psycopg2.connect("host=jiradb.cfjieo6npcxv.eu-west-1.rds.amazonaws.com dbname=jira1 user=petar.nedeljkovic password=Viesh3o9haegheecae")
         # conn.set_client_encoding('UTF-16')
-
+        print('Connected :)')
         # create a cursor
         cur = conn.cursor()
         return conn, cur
