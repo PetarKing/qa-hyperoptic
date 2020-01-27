@@ -13,9 +13,9 @@ from database import get_q_test_coverage_per_member
 # Initialize application
 app = Flask(__name__)
 
-# @app.route('/')
-# def index():
-#     return render_template('index.html')
+@app.route('/')
+def index():
+    return render_template('index.html')
 
 @app.route('/getCoverageBySprint', methods=['POST'])
 def get_q_test_coverage_per_sprint():
