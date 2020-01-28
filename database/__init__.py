@@ -6,6 +6,7 @@ Database interactions
 from datetime import date
 import psycopg2
 import pandas as pd
+import os
 
 pd.set_option('display.expand_frame_repr', False)
 pd.set_option('display.max_rows', None)
@@ -22,7 +23,7 @@ def connect_to_jira():
         # connect to the PostgreSQL server
         print('Connecting to the PostgreSQL database...')
         # conn = psycopg2.connect(**params)
-        conn = psycopg2.connect("host=jiradb.cfjieo6npcxv.eu-west-1.rds.amazonaws.com dbname=jira1 user=petar.nedeljkovic password=Viesh3o9haegheecae")
+        conn = psycopg2.connect(os.environ.get('DB_CONN', None))
         # conn.set_client_encoding('UTF-16')
         print('Connected :)')
         # create a cursor

@@ -19,8 +19,9 @@ def index():
 
 @app.route('/getCoverageBySprint', methods=['POST'])
 def get_q_test_coverage_per_sprint():
-    sprints = request.get_json()['sprints']
-    results_no_fit = get_q_test_coverage_per_member(sprints)
-    results_fit = get_q_test_coverage_per_member(sprints, fit_app=True)
+    req = request.get_json()
+    print('REQUEST:', req)
+    results_no_fit = get_q_test_coverage_per_member(req['sprints'])
+    results_fit = get_q_test_coverage_per_member(req['sprints'], fit_app=True)
     results = results_no_fit + ' <br><br> '+ results_fit
     return results
